@@ -1,5 +1,52 @@
+## Ignore Visual Studio files
+.vs/
+*.user
+*.suo
+
+## Ignore build results
 bin/
 obj/
-/packages/
-riderModule.iml
-/_ReSharper.Caches/
+out/
+*.exe
+*.dll
+*.app
+*.msi
+*.nupkg
+*.log
+
+## Rider-specific
+.idea/
+*.sln.iml
+
+## Ignore user-specific files
+*.userprefs
+*.sln.docstates
+
+## Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+## Ignore temporary files
+*.tmp
+*.bak
+*.swp
+
+## Ignore packages (if not checked in)
+packages/
+*.ncrunch*
+*.resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.dotCover
+*.orig
+
+# Optional: Ignore test results
+TestResults/
+*.coverage
+*.coveragexml
+
+# Optional: Ignore published folders
+publish/
+
+# Ignore .env file
+.env
