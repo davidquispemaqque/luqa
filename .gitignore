@@ -49,4 +49,4 @@ TestResults/
 publish/
 
 # Ignore .env file
-.env
+.env*.local
