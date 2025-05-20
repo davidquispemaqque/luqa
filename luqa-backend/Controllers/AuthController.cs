@@ -26,7 +26,7 @@ public class AuthController : ControllerBase
         var user = _context.Usuarios.SingleOrDefault(u => u.CorreoElectronico == login.CorreoElectronico);
 
         if (user == null || !BCrypt.Net.BCrypt.Verify(login.Contraseña, user.Contraseña))
-            return Unauthorized("Correo o contraseña incorrectos");
+            return Unauthorized(new { message = "Correo o contraseña incorrectos" });
 
         var claims = new[]
         {
@@ -47,7 +47,7 @@ public class AuthController : ControllerBase
 
         var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
 
-        return Ok(new { Token = tokenString });
+        return Ok(new { token = tokenString });
     }
 
     [HttpPost("register")]
@@ -69,6 +69,6 @@ public class AuthController : ControllerBase
         _context.Usuarios.Add(usuario);
         _context.SaveChanges();
 
-        return Ok("Usuario registrado correctamente");
+        return Ok(new { message = "Usuario registrado correctamente" });
     }
 }
