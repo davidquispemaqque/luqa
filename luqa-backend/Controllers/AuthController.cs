@@ -58,7 +58,7 @@ public class AuthController : ControllerBase
 
         var hashedPassword = BCrypt.Net.BCrypt.HashPassword(model.Contraseña);
 
-        var usuario = new Usuario
+        var usuario = new Usuarios
         {
             NombreCompleto = model.NombreCompleto,
             CorreoElectronico = model.CorreoElectronico,

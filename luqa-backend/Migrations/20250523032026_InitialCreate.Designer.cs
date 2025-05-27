@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using luqa_backend.Models;
 
@@ -10,9 +11,11 @@ using luqa_backend.Models;
 namespace luqa_backend.Migrations
 {
     [DbContext(typeof(LuqaContext))]
-    partial class LuqaContextModelSnapshot : ModelSnapshot
+    [Migration("20250523032026_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

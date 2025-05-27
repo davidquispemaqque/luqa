@@ -1,10 +1,14 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace luqa_backend.Models;
 
-public class Usuario
+[Table("usuarios")] // <-- Esto asegura que EF lo relacione con tu tabla
+public class Usuarios
 {
+    [Key]
     public int UsuarioID { get; set; }
 
     [Required]
@@ -21,4 +25,7 @@ public class Usuario
     public string Contraseña { get; set; }
 
     public DateTime FechaRegistro { get; set; }
+
+    // Relación con Userprogress
+    public virtual ICollection<Userprogress> Userprogress { get; set; } = new List<Userprogress>();
 }
